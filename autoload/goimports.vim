@@ -42,7 +42,7 @@ endfunction
 
 function! s:goimports()
   let l:file = expand('%')
-  let l:cmd = printf('goimports -d -srcdir %s', shellescape(l:file))
+  let l:cmd = printf('goimports -local gitlab.b47ch.com -d -srcdir %s', shellescape(l:file))
   let l:out = system(l:cmd, join(s:getlines(), "\n"))
   let l:err = v:shell_error
   return [l:out, l:err]
